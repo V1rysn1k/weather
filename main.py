@@ -1,8 +1,22 @@
+"""
+Основной модуль приложения погоды.
+
+Этот модуль содержит главную логику приложения для взаимодействия с пользователем
+и обработки вводимых данных (город или координаты).
+"""
 import sys
 from .commands import get_weather_by_city, get_weather_by_coords
 
 
 def is_coordinates(items):
+    """Проверяет, является ли ввод координатами.
+    
+    Args:
+        items (list): Список строк для проверки.
+    
+    Returns:
+        bool: True если ввод является координатами, иначе False.
+    """
     if len(items) != 2:
         return False
     try:
@@ -14,6 +28,14 @@ def is_coordinates(items):
 
 
 def process_query(query):
+    """Обрабатывает пользовательский запрос и определяет его тип.
+    
+    Args:
+        query (str): Пользовательский ввод (город или координаты).
+    
+    Returns:
+        tuple or None: Результат запроса погоды или None при ошибке.
+    """
     query_parts = query.strip().split()
     if not query_parts:
         return None
@@ -27,6 +49,10 @@ def process_query(query):
 
 
 def main():
+    """Главная функция приложения.
+    
+    Запускает интерактивный цикл для ввода запросов о погоде.
+    """
     print("Запущено приложение погоды.")
     print("Введите город либо координаты (широта и долгота). Для выхода введите 'exit' или пустую строку.")
     
