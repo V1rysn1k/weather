@@ -5,7 +5,7 @@
 и обработки вводимых данных (город или координаты).
 """
 import sys
-from .commands import get_weather_by_city, get_weather_by_coords
+from commands import get_weather_by_city, get_weather_by_coords
 
 
 def is_coordinates(items):

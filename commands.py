@@ -4,8 +4,8 @@
 Этот модуль содержит функции для получения данных о погоде
 по названию города или координатам, с использованием кэширования.
 """
-from .api import get_coordinates, get_city_by_coords, get_current_weather
-from .cache import get_cached_weather, set_cached_weather
+from api import get_coordinates, get_city_by_coords, get_current_weather
+from cache import get_cached_weather, set_cached_weather
 
 
 def get_weather_by_city(city: str):
